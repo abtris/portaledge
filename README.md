@@ -1,6 +1,6 @@
-# Vagrant Web Development Box
+# Portaledge - web development stack inside VM
 
-TL;DR Development stack for current state-of-the-art web programming. Warning: alpha quality - v0.1.
+*TL;DR* Development stack for state-of-the-art web programming. Warning: alpha quality - v0.0.1.
 
 This can create a virtual machine with all the technologies below with a single command. Technically it is an Ansible playbook that is supposed to provision a Vagrant VM. Google these.
 
@@ -31,7 +31,7 @@ cd repo
 vagrant up
 ```
 
-- To get rid of your dev environment: run `vagrant destroy`, format your hard drive, throw your MacCook out of the window...
+- To get rid of your dev environment: run `vagrant destroy`, format your hard drive, throw your MacBook out of the window...
 - To se it up all again: `vagrant up` :-)
 
 Note: might take few minuts because of all the dependencies and stuff...
