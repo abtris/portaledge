@@ -1,0 +1,10 @@
+---
+
+- name: Ruby | Add Brightbox repository
+  apt_repository: repo='ppa:brightbox/ruby-ng-experimental'
+
+- name: Ruby | Install ruby2.0
+  apt: pkg=ruby2.0 update_cache=yes
+
+- name: Ruby | Install Bundler
+  apt: pkg=ruby-bundler

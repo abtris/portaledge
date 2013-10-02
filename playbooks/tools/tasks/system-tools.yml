@@ -1,0 +1,16 @@
+---
+
+- name: update apt cache
+  apt: update_cache=yes
+
+- name: Install required packages
+  apt: name=$item state=latest
+  with_items:
+    - build-essential
+    - libssl-dev
+    - curl
+    - libcurl4-gnutls-dev
+    - libexpat1-dev
+    - gettext
+    - python-software-properties
+    - python-pycurl

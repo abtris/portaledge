@@ -1,0 +1,11 @@
+# Install core packages for postgres
+
+---
+
+- name: install postgresql
+  apt: name=$item state=latest update_cache=yes
+  with_items:
+    - postgresql-9.2
+    - postgresql-client-9.2
+    - postgresql-contrib-9.2
+    - libpq-dev

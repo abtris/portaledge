@@ -1,0 +1,14 @@
+# Install Leiningen
+
+---
+
+  - name: fetch lein
+    sudo: no
+    command: sudo wget --no-check-certificate -O /usr/local/bin/lein https://raw.github.com/technomancy/leiningen/stable/bin/lein
+
+  - name: set lein permissions
+    command: chmod 777 /usr/local/bin/lein
+
+  - name: 'Test Leiningen'
+    sudo: no
+    command: lein -version

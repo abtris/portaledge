@@ -1,0 +1,28 @@
+---
+- name: Install packages for ruby and rails development
+  action: apt
+          pkg=$item
+          state=installed
+  with_items:
+    - build-essential
+    - bison
+    - openssl
+    - libreadline6
+    - libreadline6-dev
+    - curl
+    - git-core
+    - zlib1g
+    - zlib1g-dev
+    - libssl-dev
+    - libyaml-dev
+    - autoconf
+    - libc6-dev
+    - libruby
+    - libxslt1-dev
+    - libxml2-dev
+    - libmysqlclient-dev
+    - libncurses5-dev
+    - automake
+    - libtool
+    - pkg-config
+

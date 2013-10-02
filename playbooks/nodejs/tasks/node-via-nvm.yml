@@ -1,0 +1,29 @@
+# Node
+
+- name: which node test
+  shell: which node
+  register: which_node
+  ignore_errors: yes
+
+- name: install nvm
+  git: repo=https://github.com/creationix/nvm.git dest=/opt/nvm
+  when: which_node.stdout != "/usr/bin/node"
+
+- name: install node using nvm
+  shell: . /opt/nvm/nvm.sh && nvm install $node_version creates=/opt/nvm/v$node_version/bin executable=/bin/bash
+  when: which_node.stdout != "/usr/bin/node"
+
+- name: Symlink node to /usr/bin/node
+  shell: ln -sf /opt/nvm/v$node_version/bin/node /usr/bin/node
+  when: which_node.stdout != "/usr/bin/node"
+
+# npm
+
+- name: which npm test
+  shell: which npm
+  register: which_npm
+  ignore_errors: yes
+
+- name: Install npm
+  shell: curl https://npmjs.org/install.sh | sudo sh
+  when: which_npm.stdout != "/usr/bin/npm"

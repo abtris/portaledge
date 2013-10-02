@@ -1,0 +1,27 @@
+
+- name: "Grunt"
+  npm: name=grunt version=0.4.1 global=true
+
+- name: "Bower"
+  npm: name=bower version=1.2.7 global=true
+
+- name: "Yeoman"
+  npm: name=yo version=1.0 global=true
+
+- name: "CoffeeScript"
+  npm: name=coffee-script version=1.6.3 global=true
+
+- name: "Jade"
+  npm: name=jade global=true
+
+- name: "Less"
+  npm: name=less global=true
+
+- name: "Uglify-js"
+  npm: name=uglify-js global=true
+
+- name: "Debug"
+  npm: name=debug global=true
+
+- name: "mocha"
+  npm: name=mocha global=true

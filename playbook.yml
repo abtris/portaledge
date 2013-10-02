@@ -1,0 +1,29 @@
+- hosts: all
+  sudo: yes
+  tasks:
+
+    - include: 'playbooks/tools/tasks/system-tools.yml'
+    - include: 'playbooks/tools/tasks/git.yml'
+
+    - include: 'playbooks/zsh/tasks/zsh.yml'
+      vars:
+        user: vagrant
+
+    - include: 'playbooks/ruby/tasks/common.yml'
+    - include: 'playbooks/ruby/tasks/ruby-brightbox.yml'
+
+    #- include: 'playbooks/ruby/tasks/rbenv.yml'
+    #  vars:
+    #    rbenv_root: /home/vagrant/.rbenv
+    #    ruby_version: 2.0.0-p247
+
+    - include: 'playbooks/java/tasks/java.yml'
+    - include: 'playbooks/clojure/clojure.yml'
+
+    - include: 'playbooks/postgres/tasks/postgres.yml'
+
+    - include: 'playbooks/nodejs/tasks/node-via-nvm.yml'
+      vars:
+        node_version: "0.10.20"
+
+    - include: 'playbooks/nodejs/tasks/npm-modules.yml'

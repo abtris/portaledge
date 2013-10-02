@@ -1,0 +1,5 @@
+# Create postgres users
+#
+---
+- name: create vagrant user
+  command: sudo -u postgres createuser --superuser vagrant

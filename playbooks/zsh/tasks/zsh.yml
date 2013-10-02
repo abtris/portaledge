@@ -1,0 +1,31 @@
+- name: Install zsh
+  apt: name=$item state=latest update_cache=yes
+  with_items:
+   - zsh
+
+- name: Clone oh-my-zsh repo
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/$user/.oh-my-zsh
+
+- name: remove standard zshrc
+  file: path=/home/$user/.zshrc state=absent
+
+- name: Create conf folder in home directory
+  file: path=/home/$user/conf/ state=directory owner=$user
+
+- name: deploy .zshrc
+  template: src=files/zshrc.in dest=/home/$user/conf/zshrc owner=$user
+
+- name: Create git-prompt folder in ~/.oh-my-zsh/
+  file: path=/home/$user/.oh-my-zsh/git-prompt state=directory owner=$user
+
+- name: deploy git-prompt/gitstatus.py
+  copy: src=git-prompt/gitstatus.py dest=/home/$user/.oh-my-zsh/git-prompt/gitstatus.py owner=$user
+
+- name: deploy git-prompt/zshrc.sh
+  copy: src=git-prompt/zshrc.sh dest=/home/$user/.oh-my-zsh/git-prompt/zshrc.sh owner=$user
+
+- name: symlink zshrc
+  file: path=/home/$user/.zshrc src=/home/$user/conf/zshrc state=link owner=$user
+
+- name: Set zsh as default shell
+  user: name=$user shell=/bin/zsh

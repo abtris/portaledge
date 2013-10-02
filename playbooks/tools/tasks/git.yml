@@ -1,0 +1,7 @@
+---
+
+- name: Add git repository
+  apt_repository: repo='ppa:git-core/ppa'
+
+- name: Install git
+  apt: pkg=git update_cache=yes
