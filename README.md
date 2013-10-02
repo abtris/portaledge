@@ -40,7 +40,7 @@ Note: might take few minutes because of all the dependencies and stuff...
 
 + Postgres apt package is installed, but not configured (service, users, permissions...), this needs special sub-playbook. Common postgres extensions (compatible with Heroku) would be nice too.
 + Ruby can be installed either from Brightbox apt repo (bad) or with rbenv from source (slow). How do I install latest ruby from official repository (?) without compiling? The ruby dir has to be cleaned up.
-+ Node version manager (nvm) is probably useless in Vagrant setu(. Same as above: what is an idiomatic way to install latest node via apt?
++ Node version manager (nvm) is probably useless in Vagrant setup. Same as above: what is an idiomatic way to install latest node via apt?
 + Upgrade Postgres to 9.3. These Ubuntu apt repos suck, <3 homebrew.
 + Add Mongo
 + Add Redis
