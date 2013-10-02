@@ -20,7 +20,7 @@
     - include: 'playbooks/java/tasks/java.yml'
     - include: 'playbooks/clojure/clojure.yml'
 
-    - include: 'playbooks/postgres/tasks/postgres.yml'
+    # - include: 'playbooks/postgres/tasks/postgres.yml'
 
     - include: 'playbooks/nodejs/tasks/node-via-nvm.yml'
       vars:
