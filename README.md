@@ -1,4 +1,4 @@
-# Portaledge - web development stack inside VM
+# Portaledge - full webdev stack
 
 *TL;DR* Development stack for state-of-the-art web programming. Warning: alpha quality - v0.0.1.
 
@@ -32,9 +32,9 @@ vagrant up
 ```
 
 - To get rid of your dev environment: run `vagrant destroy`, format your hard drive, throw your MacBook out of the window...
-- To se it up all again: `vagrant up` :-)
+- To set it up all again: `vagrant up` :-)
 
-Note: might take few minuts because of all the dependencies and stuff...
+Note: might take few minutes because of all the dependencies and stuff...
 
 ## TODO
 
